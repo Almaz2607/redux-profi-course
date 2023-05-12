@@ -1,21 +1,17 @@
-import { useState, useEffect } from "react";
+// import { useState, useEffect } from "react";
 
 import { postAPI } from "../services/postService";
 import PostItem from "./postItem";
 
 const PostContainer = () => {
-  const [limit, setLimit] = useState(10);
-  const {
-    data: posts,
-    isLoading,
-    error,
-  } = postAPI.useFetchAllPostsQuery(limit);
+  //   const [limit, setLimit] = useState(10);
+  const { data: posts, isLoading, error } = postAPI.useFetchAllPostsQuery(10);
 
-  useEffect(() => {
-    setTimeout(() => {
-      setLimit(5);
-    }, 2000);
-  }, []);
+  //   useEffect(() => {
+  //     setTimeout(() => {
+  //       setLimit(5);
+  //     }, 2000);
+  //   }, []);
 
   return (
     <div>
